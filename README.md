@@ -48,10 +48,4 @@ Here are the screenshots available in the root directory:
 
 These images document the completion of various steps throughout the tutorial.
 
-## Installation & Setup
 
-1. **Clone the repository**  
-   To get started, clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/yourusername/docker-practice-projects.git
-   cd docker-practice-projects
