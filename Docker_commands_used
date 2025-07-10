@@ -1,0 +1,92 @@
+# Docker Commands Cheat Sheet
+
+This README contains basic Docker commands I used while learning Docker on Linux.
+
+---
+
+## Installation
+
+Install Docker on Ubuntu:
+
+```bash
+sudo apt-get update
+sudo apt-get install docker.io
+```
+
+Check Docker service status:
+
+```bash
+sudo systemctl status docker
+```
+
+Add your user to the docker group to run docker without sudo:
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+---
+
+## Working with Containers
+
+List running containers:
+
+```bash
+docker ps
+```
+
+List all containers (including stopped ones):
+
+```bash
+docker ps -a
+```
+
+Run the official hello-world image:
+
+```bash
+docker run hello-world
+```
+
+Build a Docker image from the Dockerfile in the current directory:
+
+```bash
+docker build -t firstimage .
+```
+
+Run a container from your custom image:
+
+```bash
+docker run firstimage
+```
+
+Run a container in detached mode and map ports:
+
+```bash
+docker run -d -p 80:80 firstimage
+```
+
+View logs of a container:
+
+```bash
+docker logs <container_id>
+```
+
+Attach to a running container:
+
+```bash
+docker attach <container_id>
+```
+
+Stop a running container:
+
+```bash
+docker stop <container_id>
+```
+
+---
+
+## Notes
+
+- Replace `<container_id>` with the actual ID or name of your container.
+- Use `docker --help` to see more options and commands.
