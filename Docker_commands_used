@@ -131,6 +131,54 @@ docker run --network mynet -p 5000:5000 flask-app
 
 ---
 
+## Working with Volumes
+
+List Docker volumes:
+
+```
+docker volume ls
+```
+
+Create a volume:
+
+```
+docker volume create my_volume
+```
+
+Inspect a volume:
+
+```
+docker volume inspect my_volume
+```
+
+Run a MySQL container and bind it to a volume:
+
+```
+docker run -d --network mynet -e MYSQL_ROOT_PASSWORD=root -v my_volume:/var/lib/mysql mysql
+```
+
+- The `-v` flag maps `my_volume` on the host to `/var/lib/mysql` inside the container.
+- This persists MySQL data even if the container stops or is removed.
+
+---
+
+## Docker Compose
+
+Start services defined in a `docker-compose.yml` file:
+
+```
+docker compose up
+```
+
+- This builds and runs all containers defined in your Compose file.
+- Add `-d` to run in detached mode:
+
+  ```
+  docker compose up -d
+  ```
+
+---
+
 ## Notes
 
 - Replace `<container_id>` with the actual ID or name of your container.
