@@ -205,7 +205,7 @@ Remove all images forcefully:
 docker rmi -f $(docker images -q)
 ```
 
-⚠️ Be cautious: the last command deletes **all images** on your system!
+⚠️ Be cautious: the last command deletes all images on your system!
 
 ---
 
