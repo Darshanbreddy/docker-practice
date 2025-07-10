@@ -179,6 +179,36 @@ docker compose up
 
 ---
 
+## System Cleanup and Image Management
+
+Remove unused data (containers, networks, images, cache):
+
+```
+docker system prune
+```
+
+Remove one or more Docker images by ID:
+
+```
+docker rmi image_id1 image_id2
+```
+
+List only image IDs:
+
+```
+docker images -q
+```
+
+Remove all images forcefully:
+
+```
+docker rmi -f $(docker images -q)
+```
+
+⚠️ Be cautious: the last command deletes **all images** on your system!
+
+---
+
 ## Notes
 
 - Replace `<container_id>` with the actual ID or name of your container.
